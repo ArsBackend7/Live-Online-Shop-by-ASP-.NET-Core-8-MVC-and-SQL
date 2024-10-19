@@ -4,7 +4,8 @@ using Web.Data;
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<DataContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DCS")));
+builder.Services.AddDbContext<DataContext>(
+    options => options.UseSqlite(builder.Configuration.GetConnectionString("DCS")));
 builder.Services.AddControllersWithViews();
 
 WebApplication app = builder.Build();
