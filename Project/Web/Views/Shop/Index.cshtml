@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--shop  area start-->
+<div class="shop_section shop_reverse">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-12">
+                @await Html.PartialAsync("ShopComponents/_SidebarWidget.cshtml")
+            </div>
+            <div class="col-lg-9 col-md-12">
+                @await Html.PartialAsync("ShopComponents/_ShopBanner.cshtml")
+                @await Html.PartialAsync("ShopComponents/_ShopToolbar.cshtml")
+                @await Html.PartialAsync("ShopComponents/_ShopWrapper.cshtml")
+                @await Html.PartialAsync("ShopComponents/_ShopPagination.cshtml")
+            </div>
+        </div>
+    </div>
+</div>
+<!--shop area end-->

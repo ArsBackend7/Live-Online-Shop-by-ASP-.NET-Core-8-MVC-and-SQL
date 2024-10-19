@@ -1,5 +1,17 @@
-﻿<!--newsletter section start-->
-<section class="newsletter_section">
+﻿@{
+	// Get the current controller and action
+	var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+	var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+
+	// Check if it's the Home page
+	bool isHomePage = (currentController == "Home" && currentAction == "Index");
+
+	// Set the appropriate class (add 'border-top' only if not on the Home page)
+	var newsletterClass = isHomePage ? "" : "newsletter_padding border-top";
+}
+
+<!--newsletter section start-->
+<section class="newsletter_section @newsletterClass">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
