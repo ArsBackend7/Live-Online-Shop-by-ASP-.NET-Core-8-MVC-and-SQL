@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="Uthr Fashion is an innovative and modern e-commerce online store website." />
+    <title>@ViewData["Title"] - Uthr Fashion eCommerce</title>
+    <link rel="shortcut icon" href="~/assets/img/favicon.ico" type="image/x-icon">
+    @await Html.PartialAsync("SharedComponents/_Styles.cshtml")
+</head>
+<body>
+
+    @await Html.PartialAsync("SharedComponents/_OffCanvasMenu.cshtml")
+    @await Html.PartialAsync("SharedComponents/_MiniCart.cshtml")
+    @await Html.PartialAsync("SharedComponents/_HeaderArea.cshtml")
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    @await Html.PartialAsync("SharedComponents/_NewsletterSection.cshtml")
+    @await Html.PartialAsync("SharedComponents/_FooterArea.cshtml")
+    @await Html.PartialAsync("SharedComponents/_Scripts.cshtml")
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
